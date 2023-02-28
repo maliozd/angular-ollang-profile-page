@@ -15,7 +15,7 @@ import { RouterModule } from '@angular/router';
   imports: [
     CommonModule,
     RouterModule.forChild([{
-      path : "", component : ProfileComponent
+      path : ":userProfileId", component : ProfileComponent
     }])
   ],
   exports : [
