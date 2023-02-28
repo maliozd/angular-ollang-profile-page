@@ -9,7 +9,7 @@ import { RouterModule } from '@angular/router';
 @NgModule({
   declarations: [
     ProfileComponent,
-    SidebarComponent
+    SidebarComponent,
 
   ],
   imports: [
