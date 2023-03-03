@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap');
+
+#sidebar{
+    scrollbar-width: none;
+    transition: .2s ease;
+
+}
+
+
+.hide {
+	width: 100px;
+    transition: 0.5s ease;
+}
+.hide li a {
+	width: calc(48px - (4px * 2));
+	transition: width .3s ease;
+}
+
+
+a {
+    font-family: var(--poppins);
+}
+

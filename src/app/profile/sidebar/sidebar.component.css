@@ -1,36 +1,19 @@
-
-
-/* i {
-  height: 20px;
-  width: 20px;
-} */
-/* ul {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: space-around;
-  height: 50%;
-}
-*/
-
-
-/* i {
-  padding-right: 5px;
-  
-} */
-/* ul {
-  flex-direction: column;
-  flex-wrap: wrap;
-  position: fixed;
-  overflow: hidden;
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap");
+:root {
+  --poppins: "Poppins", sans-serif;
+  --lato: "Lato", sans-serif;
 }
 
-i {
-  padding : 10px
+#sidebar {
+  scrollbar-width: none;
+  transition: 0.2s ease;
+  background: var(--light);
 }
 
+.hide {    
+    display: none;
+}
 
-span {
-  margin-left: 5px;
-  right: auto;
-} */
-
+a {
+  font-family: var(--poppins);
+}

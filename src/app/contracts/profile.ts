@@ -1,6 +1,6 @@
 export class Profile {
     id: number
-    avatarUrl: string;
+    avatar: string;
     certificateCount: number;
     createdAt: Date;
     country: string;

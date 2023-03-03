@@ -8,6 +8,8 @@ import { Profile } from '../contracts/profile';
 })
 export class UserProfileService {
 
+  //do i need custom httpClientService? 
+  
   constructor(protected httpClient: HttpClient, @Inject("mockApiUrl") private requestUrl: string) {
     // console.log(requestUrl)
   }
