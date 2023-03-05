@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Profile } from './contracts/profile';
+import { Profile } from './contracts/api/profile';
 import { UserProfileService } from './services/user-profile.service';
 
 @Component({
@@ -18,4 +18,6 @@ export class AppComponent implements OnInit {
     this.profileData = await this.userProfileService.getProfileDataById(21);
     console.log(this.profileData)
   }
+
+ 
 }

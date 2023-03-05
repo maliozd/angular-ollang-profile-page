@@ -16,11 +16,11 @@ export class SidebarComponent implements OnInit {
     let change: SimpleChange = changes['data'];
     //  console.log(change)
     document.getElementById('sidebar').classList.toggle('hide')
+  }
 
-
-
-
-
+  navClicked(event) {
+    document.querySelector('.sidebar-active-link').classList.remove('sidebar-active-link')
+    event.target.classList.add('sidebar-active-link');
   }
 
 }

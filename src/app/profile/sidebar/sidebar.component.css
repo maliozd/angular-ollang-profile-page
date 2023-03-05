@@ -14,6 +14,22 @@
     display: none;
 }
 
-a {
-  font-family: var(--poppins);
+
+
+.sidebar-active-link {
+  position: relative;
+  color: rgba(13, 77, 18, 0.981); /* text-blue-500*/
+  transition: 0.2s ease ;
+} 
+
+#notification {
+  background-color: rgba(232, 148, 117, 0.913);
+ 
 }
+
+#notification:hover{
+  transition: 0.2s ease;
+  background-color: rgba(236, 112, 68, 0.913);
+
+}
+

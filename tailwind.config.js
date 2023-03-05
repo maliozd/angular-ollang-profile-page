@@ -8,6 +8,9 @@ module.exports = {
       zIndex: {
         '100' :"1000",
         '200' : "2000"
+      },
+      backgroundSize: {
+        '50%' : '50%'
       }
     },
     screens: {

@@ -6,6 +6,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import {LayoutModule} from '@angular/cdk/layout';
 import { MatCardModule, MatSidenavModule } from '@angular/material';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { UserInfoComponent } from './user-info/user-info.component';
+import { ContentComponent } from './content/content.component';
 
 
 @NgModule({
@@ -13,6 +15,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     ProfileComponent,
     SidebarComponent,
     NavbarComponent,
+    UserInfoComponent,
+    ContentComponent,
 
   ],
   imports: [

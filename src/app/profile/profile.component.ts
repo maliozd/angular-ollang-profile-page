@@ -1,8 +1,8 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, Output } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { firstValueFrom, Observable } from 'rxjs';
-import { Profile } from '../contracts/profile';
+import { Profile } from '../contracts/api/profile';
+import NavbarUserInfoDto from '../contracts/dtos/navbar-user-info-dto';
+import UserInfoDTO from '../contracts/dtos/user-info-dto';
 import { UserProfileService } from '../services/user-profile.service';
 
 @Component({
@@ -13,32 +13,52 @@ import { UserProfileService } from '../services/user-profile.service';
 export class ProfileComponent implements OnInit {
 
   constructor(private profileService: UserProfileService, private activatedRoute: ActivatedRoute) { }
-    avatarUrl : string
 
-  //getting from activatedRoute.snapshot.params --> line 24
-  userProfileId : number;
-  singleProfileData: Profile;
+  //getting from activatedRoute.snapshot.params --> onInit
+  userProfileId: number;
+  profileData: Profile;
+  userInfoDto: UserInfoDTO = new UserInfoDTO(); //data object for userInfoComponent
+  userInfoForNavbarDto: NavbarUserInfoDto = new NavbarUserInfoDto();
 
-  public inputToSidebar: Object = false
+
+  //menu button clicked event --> sending to sidebar
+  public inputToSidebar: boolean = false
 
   async ngOnInit() {
+    const footerNavs = document.querySelectorAll(".text-blue-400")
+
     this.userProfileId = this.activatedRoute.snapshot.params['userProfileId'];
-    this.singleProfileData = await this.profileService.getProfileDataById(this.userProfileId);
-    this.avatarUrl = this.singleProfileData.avatar
-    // console.log(this.allProfilesData)
-    console.log(this.singleProfileData)
-    console.log(this.avatarUrl)
+    this.profileData = await this.profileService.getProfileDataById(this.userProfileId);
+
+
+    this.userInfoDto.avatarUrl = this.profileData.avatar
+    this.userInfoDto.name = this.profileData.name
+    this.userInfoDto.summary = this.profileData.summary
+    this.userInfoDto.state = this.profileData.state
+    this.userInfoDto.country = this.profileData.country
+    this.userInfoDto.yearsOfExperience = this.profileData.yearsOfExperience
+    this.userInfoDto.numberOfInternships = this.profileData.numberOfInternships
+    this.userInfoDto.certificateCount = this.profileData.certificateCount
+
+    this.userInfoForNavbarDto.name = this.profileData.name;
+    this.userInfoForNavbarDto.avatarUrl = this.profileData.avatar;
+
+
+
   }
 
-  async getUserData(){
-    this.singleProfileData = await this.profileService.getProfileDataById(this.userProfileId);
+  async getUserData() {
+    this.profileData = await this.profileService.getProfileDataById(this.userProfileId);
 
   }
 
-  clickedFromNavbar(){
+  clickedFromNavbar() {
     this.inputToSidebar = !this.inputToSidebar
   }
 
-  
-  
+  navClicked(event) {
+    document.querySelector('.active-link').classList.remove('active-link');
+    event.target.classList.add('active-link')
+  }
+
 }
