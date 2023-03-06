@@ -1,8 +1,8 @@
 <div class="ml-60 bg-gray-100 ">
   <div class="p-6 rounded-xl flex space-x-8 ">
-    <img class="w-40 h-40 rounded-full mt-3" src="{{userInfo.avatarUrl}}" alt="ball">
+    <img class="w-40 h-40 rounded-full mt-3" src="{{userInfo?.avatarUrl}}" alt="ball">
     <div class="space-y-2 w-1/2 text-left">
-      <p class="text-black  font-tilt text-2xl">{{userInfo.name}}</p>
+      <p class="text-black  font-tilt text-2xl">{{userInfo?.name}}</p>
       <p class="text-xs font-tilt leading-none  text-gray-600 flex ">
         <svg class="mr-1" xmlns="http://www.w3.org/2000/svg" width="14" height="18" viewBox="0 0 24 24" fill="none"
           stroke="#626262" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="round">
@@ -13,7 +13,7 @@
           {{userInfo?.state}}, {{userInfo?.country}}
         </small>
       </p>
-      <p class="text-gray-500 text-left font-tilt "> {{userInfo.summary}}
+      <p class="text-gray-500 text-left font-tilt "> {{userInfo?.summary}}
     </div>
     <div class="mt-1">
       <button type="button"
@@ -23,7 +23,6 @@
         class="inline-block ml-2 rounded-full border-4 px-2 pt-2 pb-[6px]  transition duration-150 ease-in-out hover:border-primary-accent-100 hover:bg-neutral-500 hover:bg-opacity-10 ">
         <small class="font-tilt text-base text-gray-600">Public View</small></button>
     </div>
-
   </div>
   <div class="items-center flex">
     <div class="bg-gray-100 h-10 w-72">
@@ -38,10 +37,8 @@
           <br>
           <small class="text-gray-500 text-sm">
             Experienced
-
           </small>
         </small>
-
       </p>
     </div>
     <div class="bg-gray-100 h-10 w-72">
@@ -56,10 +53,8 @@
           <br>
           <small class="text-gray-500 text-sm">
             Achieved
-
           </small>
         </small>
-
       </p>
     </div>
     <div class="bg-gray-100 h-10 w-3/4">
@@ -76,9 +71,7 @@
             Completed
           </small>
         </small>
-
       </p>
     </div>
-
   </div>
 </div>

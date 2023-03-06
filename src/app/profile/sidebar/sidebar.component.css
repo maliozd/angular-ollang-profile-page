@@ -1,29 +1,13 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap");
-:root {
-  --poppins: "Poppins", sans-serif;
-  --lato: "Lato", sans-serif;
-}
-
-
-
-
-
-
-
 .sidebar-active-link {
-  position: relative;
-  color: rgba(37, 171, 48, 0.981); /* text-blue-500*/
-  transition: 0.2s ease ;
-} 
+  color: rgb(60, 209, 72); /* text-blue-500*/
+  transition: 0.2s ease;
+}
 
 #notification {
   background-color: rgba(232, 148, 117, 0.913);
- 
 }
 
-#notification:hover{
+#notification:hover {
   transition: 0.2s ease;
-  background-color: rgba(236, 112, 68, 0.913);
-
+  background-color: rgb(236, 113, 68);
 }
-

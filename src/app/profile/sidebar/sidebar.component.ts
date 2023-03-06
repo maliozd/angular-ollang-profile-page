@@ -6,12 +6,13 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent implements OnInit {
-
-  @Input() isSidebarOpen: boolean;
+  constructor() { }
+  @Input() isSidebarOpen: boolean; //default value : true
 
   ngOnInit(): void {
     document.getElementById('sidebar').classList.remove('hide')
   }
+
   ngOnChanges() {
     console.log(this.isSidebarOpen)
     document.getElementById('sidebar').classList.toggle('hide')
@@ -21,10 +22,9 @@ export class SidebarComponent implements OnInit {
     document.querySelector('.sidebar-active-link').classList.remove('sidebar-active-link')
     event.target.classList.add('sidebar-active-link');
   }
-
 }
 
-/* ? can't track changes on boolean ? 
+/* ?! track change !? 
 
 ngOnChanges(changes: { [property: string]: SimpleChange }) {
     let change: SimpleChange = changes['data'];

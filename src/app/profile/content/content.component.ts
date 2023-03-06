@@ -8,15 +8,16 @@ import { DynamicComponentLoadingService } from 'src/app/services/dynamic-compone
   templateUrl: './content.component.html',
   styleUrls: ['./content.component.css']
 })
-export class ContentComponent implements OnInit {
+export class ContentComponent implements OnInit { 
+  constructor(private dynamicComponentLoadService: DynamicComponentLoadingService) { }
 
   @ViewChild(DynamicComponentLoadDirective, { static: true })
   dynamicComponentLoadDirective: DynamicComponentLoadDirective;
-  constructor(private dynamicComponentLoadService: DynamicComponentLoadingService) { }
 
   ngOnInit(): void {
     this.dynamicComponentLoadService.loadComponent(ComponentType.ExperienceComponent, this.dynamicComponentLoadDirective.viewContainerRef)
   }
+  
   loadComponent(event) {
     document.querySelector('.active-link').classList.remove('active-link');
     event.target.classList.add('active-link')

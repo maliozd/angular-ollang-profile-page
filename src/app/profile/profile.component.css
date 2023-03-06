@@ -1,14 +1,11 @@
-
 .hide {
   width: 100px;
   transition: 0.5s ease;
 }
 
-
 #sidebar {
   transition: 0.5s ease;
 }
-
 
 #rightSide {
   width: 735px;

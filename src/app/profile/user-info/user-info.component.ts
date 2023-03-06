@@ -9,13 +9,10 @@ import { UserProfileService } from 'src/app/services/user-profile.service';
   styleUrls: ['./user-info.component.css']
 })
 export class UserInfoComponent implements OnInit {
-
   constructor() { }
 
-
   @Input() userInfo : UserInfoData;
-
-
+  
   async ngOnInit() {
   }
 

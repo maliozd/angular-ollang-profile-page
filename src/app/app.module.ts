@@ -6,11 +6,6 @@ import { AppComponent } from './app.component';
 import { ProfileModule } from './profile/profile.module';
 import { HttpClientModule } from '@angular/common/http';
 
-//Material
-//Tailwind Hamburgers Plugin !!
-
-//mockAPI returns wrong response for yearsOfExperience - certificateCount - numberOfInternships  --> ten thousand numbers 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,4 +29,4 @@ import { HttpClientModule } from '@angular/common/http';
 })
 export class AppModule { }
 
-//bu ne sikim iştir
+

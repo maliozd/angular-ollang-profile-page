@@ -1,4 +1,4 @@
-export default class NavbarData {
+export  class NavbarData {
     name : string;
     avatarUrl : string
 }

@@ -1,8 +1,7 @@
-import { HttpClient } from '@angular/common/http';
-import { Inject, Injectable } from '@angular/core';
-import { firstValueFrom, Observable } from 'rxjs';
+import { Injectable } from '@angular/core';
+import { firstValueFrom } from 'rxjs';
 import { Profile } from '../contracts/api/profile';
-import NavbarData from '../contracts/dtos/navbar-data';
+import { NavbarData } from '../contracts/dtos/navbar-data';
 import { ProfileData } from '../contracts/dtos/profile-data';
 import { UserInfoData } from '../contracts/dtos/user-info-data';
 import { HttpClientService } from './http-client.service';
@@ -29,7 +28,6 @@ export class UserProfileService {
       avatarUrl: data.avatar,
       name: data.name
     };
-
     const userInfoData: UserInfoData = {
       avatarUrl: data.avatar,
       certificateCount: data.certificateCount,

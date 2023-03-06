@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Profile } from './contracts/api/profile';
-import { UserProfileService } from './services/user-profile.service';
 
 @Component({
   selector: 'app-root',
