@@ -1,14 +1,14 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap");
-
-
 
 .hide {
   width: 100px;
   transition: 0.5s ease;
 }
-.hide li a {
-  font-size: 2px;
+
+
+#sidebar {
+  transition: 0.5s ease;
 }
+
 
 #rightSide {
   width: 735px;
