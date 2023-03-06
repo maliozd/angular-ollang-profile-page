@@ -4,21 +4,15 @@
   --lato: "Lato", sans-serif;
 }
 
-#sidebar {
-  scrollbar-width: none;
-  transition: 0.2s ease;
-  background: var(--light);
-}
 
-.hide {    
-    display: none;
-}
+
+
 
 
 
 .sidebar-active-link {
   position: relative;
-  color: rgba(13, 77, 18, 0.981); /* text-blue-500*/
+  color: rgba(37, 171, 48, 0.981); /* text-blue-500*/
   transition: 0.2s ease ;
 } 
 

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output, SimpleChange } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-sidebar',
@@ -7,20 +7,29 @@ import { Component, EventEmitter, Input, OnInit, Output, SimpleChange } from '@a
 })
 export class SidebarComponent implements OnInit {
 
-  @Input() data;
+  @Input() isSidebarOpen: boolean;
 
   ngOnInit(): void {
     document.getElementById('sidebar').classList.remove('hide')
   }
-  ngOnChanges(changes: { [property: string]: SimpleChange }) {
-    let change: SimpleChange = changes['data'];
-    //  console.log(change)
+  ngOnChanges() {
+    console.log(this.isSidebarOpen)
     document.getElementById('sidebar').classList.toggle('hide')
   }
 
-  navClicked(event) {
+  sidebarNavChanged(event) {
     document.querySelector('.sidebar-active-link').classList.remove('sidebar-active-link')
     event.target.classList.add('sidebar-active-link');
   }
 
 }
+
+/* ? can't track changes on boolean ? 
+
+ngOnChanges(changes: { [property: string]: SimpleChange }) {
+    let change: SimpleChange = changes['data'];
+     console.log(change)
+    document.getElementById('sidebar').classList.toggle('hide')
+  }
+
+  */

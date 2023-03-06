@@ -7,9 +7,10 @@
   transition: 0.5s ease;
 }
 .hide li a {
-  width: calc(48px - (4px * 2));
-  transition: width 0.3s ease;
+  font-size: 2px;
 }
 
-
+#rightSide {
+  width: 735px;
+}
 

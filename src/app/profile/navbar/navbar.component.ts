@@ -1,7 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
-import { Profile } from 'src/app/contracts/api/profile';
-import NavbarUserInfoDto from 'src/app/contracts/dtos/navbar-user-info-dto';
-import { UserProfileService } from 'src/app/services/user-profile.service';
+import NavbarData from 'src/app/contracts/dtos/navbar-data';
 
 @Component({
   selector: 'app-navbar',
@@ -10,17 +8,24 @@ import { UserProfileService } from 'src/app/services/user-profile.service';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(private userProfileService: UserProfileService) {
+  constructor() {
   }
-  @Output() toggleSidebarEvent: EventEmitter<any> = new EventEmitter();
-  @Input()  userInfo : NavbarUserInfoDto
-  profileData: Profile;
+  @Output() hideSidebarEventEmitter: EventEmitter<any> = new EventEmitter();
+  @Input() userInfo: NavbarData
 
   async ngOnInit() {
-    this.profileData = await this.userProfileService.getProfileDataById(32)
-  }
-  menubarClicked() {
-    this.toggleSidebarEvent.emit();
+    document.getElementById('dropdownMenuButton').addEventListener('click', () => {
+      document.getElementById('dropdownMenu').classList.toggle('hidden');
+    });
+   
   }
 
+  sidebarToggleEvent() {
+    this.hideSidebarEventEmitter.emit();
+  }
+
+  searchSubmitted(event){
+console.log(event)
+  }
+ 
 }

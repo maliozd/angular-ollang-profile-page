@@ -1,4 +1,4 @@
-export default class UserInfoDTO {
+export class UserInfoData {
     name: string
     avatarUrl : string;
     summary : string;
@@ -8,3 +8,5 @@ export default class UserInfoDTO {
     certificateCount : number;
     numberOfInternships : number;
 }
+
+//data object for userInfoComponent

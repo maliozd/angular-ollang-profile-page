@@ -1,111 +1,55 @@
-<div class=" overflow-x-hidden ">
-  <app-navbar (toggleSidebarEvent)="clickedFromNavbar()" [userInfo]="userInfoForNavbarDto"></app-navbar>
-  <app-sidebar [data]="inputToSidebar" class="lg:hidden"></app-sidebar>
-
-
-
-
-
-
-
-
-
-
-
-
-  <div class="ml-60 w-2/4 ml-28  shadow-xl bg-gray-100 ">
-    <div class="p-6 rounded-xl flex space-x-8 p-8">
-      <img class="w-20 h-20 mx-auto rounded-full" src="{{profileData.avatar}}" alt="ball">
-      <div class="space-y-4 mt-2 text-center">
-        <div class="h-2 w-1/2 text-left  ">
-          <h1 class="text-black font-tilt text-2xl">{{profileData.name}}</h1>
-          <p class="text-xs font-tilt leading-none  text-gray-600 flex ">
-            <svg class="mr-1" xmlns="http://www.w3.org/2000/svg" width="14" height="18" viewBox="0 0 24 24" fill="none"
-              stroke="#626262" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="round">
-              <circle cx="12" cy="10" r="3" />
-              <path d="M12 21.7C17.3 17 20 13 20 10a8 8 0 1 0-16 0c0 3 2.7 6.9 8 11.7z" />
+<div class="overflow-x-hidden w-full h-max bg-gray-100">
+  <app-navbar (hideSidebarEventEmitter)="isSidebarOpen = !isSidebarOpen" [userInfo]="navbarData"></app-navbar>
+  <div id="sidebar" class="fixed top-0 left-0 w-60 bg-white h-full z-200 overflow-x-hidden md:w-48 border">
+    <app-sidebar [isSidebarOpen]="isSidebarOpen"></app-sidebar>
+  </div>
+  <app-user-info [userInfo]="userInfoData" class="">
+  </app-user-info>
+  <div class="bg-gray-100 float-right h-96  2xl:hidden" id="rightSide">
+    <div class="bg-red-200 w-3/4 overflow-y-none py-40 ml-20">
+      asd
+      <div class="flex flex-col items-center p-10 bg-gray-200">
+        <span class="font-semibold">Padawan</span>
+        <div class="flex items-center">
+          <span class="text-3xl">$</span>
+          <span class="text-5xl font-bold">20</span>
+          <span class="text-2xl text-gray-500">/mo</span>
+        </div>
+      </div>
+      <div class="p-10">
+        <ul>
+          <li class="flex items-center">
+            <svg class="w-5 h-5 text-green-600 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+              fill="currentColor">
+              <path fill-rule="evenodd"
+                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                clip-rule="evenodd" />
             </svg>
-            <small class = "text-xs mt-1">
-              {{profileData?.state}}, {{profileData?.country}}
-
-            </small>
-          </p>
-
-        </div>
-        <div class="h-8 w-1/2 flex relative ">
-        </div>
-        <p class="text-gray-500 text-left font-tilt"> {{profileData.summary}}
+            <span class="ml-2">Lightsaber</span>
+          </li>
+          <li class="flex items-center">
+            <svg class="w-5 h-5 text-green-600 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+              fill="currentColor">
+              <path fill-rule="evenodd"
+                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                clip-rule="evenodd" />
+            </svg>
+            <span class="ml-2">Robe</span>
+          </li>
+          <li class="flex items-center">
+            <svg class="w-5 h-5 text-green-600 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+              fill="currentColor">
+              <path fill-rule="evenodd"
+                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                clip-rule="evenodd" />
+            </svg>
+            <span class="ml-2">Insurance</span>
+          </li>
+        </ul>
       </div>
-    </div>
-    <div class="items-center flex">
-      <div class="bg-gray-100 h-10 w-72">
-        <p class=" flex md:text-sm ml-6">
-          <svg class="" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
-            stroke="#626262" stroke-width="1" stroke-linecap="round" stroke-linejoin="bevel">
-            <circle cx="12" cy="12" r="10"></circle>
-            <polyline points="12 6 12 12 16 14"></polyline>
-          </svg>
-          <small class="font-tilt text-base leading-none text-black  ml-4">
-            {{profileData?.yearsOfExperience}}+ Years Job
-            <br>
-            <small class="text-gray-500 text-sm">
-              Experienced
-
-            </small>
-          </small>
-
-        </p>
-      </div>
-      <div class="bg-gray-100 h-10 w-72">
-        <p class=" flex  md:text-sm ml-2">
-          <svg class="ml-4" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
-            stroke="#626262" stroke-width="1" stroke-linecap="round" stroke-linejoin="bevel">
-            <path d="M14 2H6a2 2 0 0 0-2 2v16c0 1.1.9 2 2 2h12a2 2 0 0 0 2-2V8l-6-6z" />
-            <path d="M14 3v5h5M16 13H8M16 17H8M10 9H8" />
-          </svg>
-          <small class="font-tilt text-base leading-none text-black  ml-4">
-            {{profileData?.certificateCount}} Certificates
-            <br>
-            <small class="text-gray-500 text-sm">
-              Achieved
-
-            </small>
-          </small>
-
-        </p>
-      </div>
-      <div class="bg-gray-100 h-10 w-3/4">
-        <p class=" flex md:text-sm">
-          <svg class="ml-10" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
-            stroke="#626262" stroke-width="1" stroke-linecap="round" stroke-linejoin="bevel">
-            <polyline points="9 11 12 14 22 4"></polyline>
-            <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
-          </svg>
-          <small class="font-tilt text-base leading-none text-black  ml-4">
-            {{profileData?.numberOfInternships}} Internship
-            <br>
-            <small class="text-gray-500 text-sm">
-              Completed
-            </small>
-          </small>
-
-        </p>
-      </div>
-
     </div>
   </div>
-
-
-
-
-
-
-
-
-
-
-
-  <!-- <app-user-info [userInfo]="userInfoDto" class="">
-  </app-user-info> -->
+  
   <app-content></app-content>
+
 </div>

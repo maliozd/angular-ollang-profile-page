@@ -1,22 +1,58 @@
-<div class="relative w-[calc(100%-220px)] left-60 md:w-[calc(100%-40px)]  md:left-56 bg-gray-100"> <!--content // transitition -->
-  <!-- NAVBAR  -->
-  <div class = "h-14  py-0 px-6 flex items-center gap-6 sticky top-0 left-0 z-100 before:content-[''] before:w-10 before:h-10 before:-bottom-2.5 before:absolute before:rounded-3xl"> <!--navbar-->
-      <i class='bx bx-menu cursor-pointer text-lg ' id = "menuBar" (click) = "menubarClicked()" ></i>
-      <form action="#" class = "max-w-sm w-full mr-auto">
-          <div class="flex items-center h-9">
-              <input type="search" placeholder="Search anything..." class = "grow px-4 h-full border-solid bg-white rounded-3xl outline-none w-full ">
-              <button type="submit" class="w-9 h-full flex items-center justify-center bg-transparent text-lg border-none outline-none cursor-pointer rounded-lg"><i class='bx bx-search' ></i></button>
-          </div>
-      </form>
-      <!-- <input type="checkbox" id="switch-mode" hidden> -->
-      <!-- <label for="switch-mode" class="switch-mode"></label> -->
-      <a href="#" class="text-l relative mr-12 sm:hidden">
-          <i class='bx bxs-bell' ></i>
-          <span class="absolute -right-0 -top-0 w-2 h-2 rounded-xl text-white bg-blue-500 font-bold text-xs flex justify-center items-center "></span>
-      </a>
-      <div class="profile justify-center items-center flex">
-          <img src="{{userInfo.avatarUrl}}" class = "w-10 h-10 rounded-2xl">
-          <small class = "ml-6 text-m text-gray-900 sm:hidden">{{userInfo.name}}</small>
-      </div>
-  </div>
+<div class="relative w-[calc(100%-220px)] left-60 md:w-[calc(100%-40px)]   md:left-56 bg-gray-100">
+    <i id="menuBar" class='top-3 absolute  bx bx-menu cursor-pointer text-2xl ' (click)="sidebarToggleEvent()"></i>
+    <div
+        class="h-14 ml-12 flex items-center gap-8 sticky top-4 left-0 z-100 before:content-[''] before:w-10 before:h-10 before:-bottom-2.5 before:absolute before:rounded-3xl">
+
+        <svg class="w-5 h-5 ml-1 text-gray-500 absolute" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd"
+                d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                clip-rule="evenodd"></path>
+        </svg>
+            <input id="search-navbar" type="text"
+                class=" w-1/2 h-12 p-2 pl-10 text-sm text-gray-900  rounded-3xl text-21l" placeholder="Search Anything"
+                onsubmit="searchSubmitted($event)">
+
+        <div class="ml-96">
+            <a class="text-l relative sm:hidden cursor-pointer">
+                <i class='bx bxs-bell'></i>
+                <span
+                    class="absolute -right-0 -top-0 w-2 h-2 rounded-xl text-white bg-blue-500 font-bold text-xs flex justify-center items-center "></span>
+            </a>
+        </div>
+        <div class="profile justify-center items-center flex ">
+            <img src="{{userInfo.avatarUrl}}" class="w-10 h-10 rounded-xl ml-4 ">
+            <small class="ml-6 text-m text-gray-900 sm:hidden">{{userInfo.name}}</small>
+
+        </div>
+        <button id="dropdownMenuButton" data-dropdown-toggle="dropdownMenuButton"
+            class="inline-flex bg-slate-100 items-center  text-sm font-medium text-center text-gray-900 bg-white rounded-lg hover:bg-slate-200 "
+            type="button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                stroke="#626262" stroke-width="2" stroke-linecap="round" stroke-linejoin="bevel">
+                <circle cx="12" cy="12" r="1"></circle>
+                <circle cx="19" cy="12" r="1"></circle>
+                <circle cx="5" cy="12" r="1"></circle>
+            </svg>
+        </button>
+        <div id="dropdownMenu" class="relative inline-block text-left hidden">
+            <div class="absolute right-0 z-10 mt-10 w-56 origin-top-right rounded-xl bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+                role="menu" aria-orientation="vertical" tabindex="-1">
+                <div class="py-1" role="none">
+                    <a id="menu-item"
+                        class="font-tilt text-gray-700 block px-4 py-2 text-sm cursor-pointer hover:text-green-500"
+                        role="menuitem" tabindex="-1">Account settings</a>
+                    <a id="menu-item"
+                        class="font-tilt text-gray-700 block px-4 py-2 text-sm cursor-pointer hover:text-green-500"
+                        role="menuitem" tabindex="-1">Support</a>
+                    <a id="menu-item"
+                        class="font-tilt text-gray-700 block px-4 py-2 text-sm cursor-pointer hover:text-green-500"
+                        role="menuitem" tabindex="-1">FAQ</a>
+                    <a id="menu-item"
+                        class="font-tilt text-gray-700 block px-4 py-2 text-sm cursor-pointer hover:text-green-500"
+                        role="menuitem" tabindex="-1">License</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

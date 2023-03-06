@@ -1,4 +1,3 @@
-<div id="sidebar" class="fixed top-0 left-0 w-60  h-full z-200 overflow-x-hidden md:w-48 border ">
 
     <div class="ml-10 flex">
         <img src="../assets/ollangCropped.jpeg" class="w-40">
@@ -12,8 +11,8 @@
                     <path d="M4 4a16 16 0 0 1 16 16"></path>
                     <circle cx="5" cy="19" r="1"></circle>
                 </svg>
-                <span class="-mr-1 t font-tilt font-medium text-gray-400 hover:text-gray-500 ml-2 cursor-pointer"
-                    (click)="navClicked($event)">My Job Feed</span>
+                <span class="-mr-1 t font-tilt font-medium text-gray-400 hover:text-green-400 ml-2 cursor-pointer"
+                    (click)="sidebarNavChanged($event)">My Job Feed</span>
             </a>
         </li>
         <li class="h-8 bg-white ml-2 rounded-2xl p-1 mb-2">
@@ -23,8 +22,8 @@
                     <circle cx="11" cy="11" r="8"></circle>
                     <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                 </svg>
-                <span class="-mr-1 font-tilt font-medium text-gray-400 hover:text-gray-500 ml-2 cursor-pointer"
-                    (click)="navClicked($event)">Discover Jobs</span>
+                <span class="-mr-1 font-tilt font-medium text-gray-400 hover:text-green-400 ml-2 cursor-pointer"
+                    (click)="sidebarNavChanged($event)">Discover Jobs</span>
             </a>
         </li>
         <li class="h-8 bg-white ml-2 rounded-2xl p-1 mb-2">
@@ -33,8 +32,8 @@
                     fill="none" stroke="#000000" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
                 </svg>
-                <span class="-mr-1 font-tilt font-medium text-gray-400 hover:text-gray-500 ml-2 cursor-pointer"
-                    (click)="navClicked($event)">Saved Jobs</span>
+                <span class="-mr-1 font-tilt font-medium text-gray-400 hover:text-green-400 ml-2 cursor-pointer"
+                    (click)="sidebarNavChanged($event)">Saved Jobs</span>
                 <div class="py-1 px-2  shadow-xl rounded-full text-gray-300 flex items-center justify-center ml-4 md:hidden"
                     id="notification">
                     <p class="text-white text-sm">8+</p>
@@ -49,8 +48,8 @@
                     </path>
                     <polyline points="22,6 12,13 2,6"></polyline>
                 </svg>
-                <span class="-mr-1 font-tilt font-medium text-gray-400 hover:text-gray-500 ml-2 cursor-pointer"
-                    (click)="navClicked($event)">Proposal</span>
+                <span class="-mr-1 font-tilt font-medium text-gray-400 hover:text-green-400 ml-2 cursor-pointer"
+                    (click)="sidebarNavChanged($event)">Proposal</span>
             </a>
         </li>
         <li class="h-8 bg-white ml-2 rounded-2xl p-1 mb-2">
@@ -60,8 +59,8 @@
                     <path d="M14 2H6a2 2 0 0 0-2 2v16c0 1.1.9 2 2 2h12a2 2 0 0 0 2-2V8l-6-6z" />
                     <path d="M14 3v5h5M16 13H8M16 17H8M10 9H8" />
                 </svg>
-                <span class="-mr-1 font-tilt font-medium text-gray-400 hover:text-gray-500 ml-2 cursor-pointer"
-                    (click)="navClicked($event)">All contracts</span>
+                <span class="-mr-1 font-tilt font-medium text-gray-400 hover:text-green-400 ml-2 cursor-pointer"
+                    (click)="sidebarNavChanged($event)">All contracts</span>
                 <div class="py-1 px-2  shadow-xl rounded-full text-gray-300 flex items-center justify-center ml-4 md:hidden"
                     id="notification">
                     <p class="text-white text-sm ">21+</p>
@@ -77,9 +76,8 @@
                     <circle cx="12" cy="12" r="10" />
                 </svg>
                 <span
-                    class="-mr-1 font-tilt font-medium text-gray-400 hover:text-gray-500 ml-2 sidebar-active-link cursor-pointer"
-                    (click)="navClicked($event)">Profile</span>
-
+                    class="-mr-1 font-tilt font-medium text-gray-400 hover:text-green-400 ml-2 sidebar-active-link cursor-pointer"
+                    (click)="sidebarNavChanged($event)">Profile</span>
             </a>
         </li>
         <li class="h-8 bg-white ml-2 rounded-2xl p-1 mb-2">
@@ -89,9 +87,8 @@
                     <line x1="12" y1="1" x2="12" y2="23"></line>
                     <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
                 </svg>
-                <span class="-mr-1 font-tilt font-medium text-gray-400 hover:text-gray-500 ml-2 cursor-pointer"
-                    (click)="navClicked($event)">Transactions</span>
-
+                <span class="-mr-1 font-tilt font-medium text-gray-400 hover:text-green-400 ml-2 cursor-pointer"
+                    (click)="sidebarNavChanged($event)">Transactions</span>
             </a>
         </li>
         <li class="h-8 bg-white ml-2 rounded-2xl p-1 ">
@@ -101,15 +98,13 @@
                     <path d="M14 2H6a2 2 0 0 0-2 2v16c0 1.1.9 2 2 2h12a2 2 0 0 0 2-2V8l-6-6z" />
                     <path d="M14 3v5h5M16 13H8M16 17H8M10 9H8" />
                 </svg>
-                <span class="-mr-1 font-tilt font-medium text-gray-400 hover:text-gray-500 ml-2 cursor-pointer"
-                    (click)="navClicked($event)">Reports</span>
-
+                <span class="-mr-1 font-tilt font-medium text-gray-400 hover:text-green-400 ml-2 cursor-pointer"
+                    (click)="sidebarNavChanged($event)">Reports</span>
             </a>
         </li>
-
     </ul>
     <ul class="w-full ml-10 mt-96">
-        <li class="h-8 bg-white ml-2 rounded-2xl p-1">
+        <li class="h-8 bg-white ml-2 rounded-2xl p-1 ">
             <a
                 class="cursor-pointer w-100 h-100 bg-white flex items-center rounded-lg font-2xl nowrap overflow-x-hidden">
                 <svg class="md:hidden" xmlns="http://www.w3.org/2000/svg" width="18" height="20" viewBox="0 0 24 24"
@@ -119,8 +114,7 @@
                         d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
                     </path>
                 </svg>
-                <span class="-mr-1 font-tilt font-medium text-gray-400 hover:text-gray-500 ml-2">Settings</span>
-
+                <span class="-mr-1 font-tilt font-medium text-gray-400 hover:text-blue-400 ml-2">Settings</span>
             </a>
         </li>
         <li class="h-8 bg-white ml-2 rounded-2xl p-1">
@@ -130,9 +124,7 @@
                     fill="none" stroke="#000000" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M10 3H6a2 2 0 0 0-2 2v14c0 1.1.9 2 2 2h4M16 17l5-5-5-5M19.8 12H9" />
                 </svg>
-                <span class="-mr-1 font-tilt font-medium text-gray-400 hover:text-gray-500 ml-2">Logout</span>
-
+                <span class="-mr-1 font-tilt font-medium text-gray-400 hover:text-red-400 ml-2">Logout</span>
             </a>
         </li>
     </ul>
-</div>

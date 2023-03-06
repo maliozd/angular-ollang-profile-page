@@ -1,36 +1,29 @@
-
-<div class="w-1/2  overflow-y-hidden overflow-x-hidden ml-60" id="main"> 
-  <div class="flex items-center space-between  wrap">
-    <div class=" bg-gray-100 rounded-b h-64 sm:rounded-b-none sm:rounded-r p-4 flex flex-col justify-between leading-normal">
-
-      <div class="flex ">
-        <img class="ml-10 mt-2 w-40 h-40 rounded-full float-left" src="{{userInfo?.avatarUrl}}" alt="Avatar of Writer">
-        <div class="ml-20 mb-20 ">
-          <p class="text-gray-800 leading-none font-tilt text-2xl md:text-lg mt-2">{{userInfo?.name}}</p>
-          <p class="text-s font-serif leading-none mt-4 text-gray-600 flex items-center">
-            <svg class="mr-2" xmlns="http://www.w3.org/2000/svg" width="16" height="18" viewBox="0 0 24 24" fill="none"
-              stroke="#626262" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="round">
-              <circle cx="12" cy="10" r="3" />
-              <path d="M12 21.7C17.3 17 20 13 20 10a8 8 0 1 0-16 0c0 3 2.7 6.9 8 11.7z" />
-            </svg>
-            {{userInfo?.state}}, {{userInfo?.country}}
-          </p>
-          <p class="text-gray-500 font-tilt mt-2 text-xs xl:hidden ">
-            {{userInfo?.summary}}</p>
-        </div>
-        <div class="flex items-center   md:ml-0 ">
-          <!--Refactor-->
-          <button type="button"
-            class="inline-block rounded border-2 border-primary-100 px-6 pt-2 pb-[6px] text-xs font-medium uppercase leading-normal text-primary-700 transition duration-150 ease-in-out hover:border-primary-accent-100 hover:bg-neutral-500 hover:bg-opacity-10 focus:border-primary-accent-100 focus:outline-none focus:ring-0 active:border-primary-accent-200 dark:text-primary-100 dark:hover:bg-neutral-100 dark:hover:bg-opacity-10 rounded-full"><small
-              class="font-tilt text-xs fixwd text-gray-600 ">Edit
-              Profile</small></button>
-          <button type="button"
-            class="text-white bg-gradient-to-r from-orange-300 via-orange-400 to-orange-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 font-medium rounded-full text-sm px-6 py-2 text-center flex ml-2 top-0 md:ml-0 md:px-2 md:py-1"><small
-              class="font-tilt text-sm text-gray-100  ">Public View</small></button>
-          <!--Refactor-->
-        </div>
-      </div>
+<div class="ml-60 bg-gray-100 ">
+  <div class="p-6 rounded-xl flex space-x-8 ">
+    <img class="w-40 h-40 rounded-full mt-3" src="{{userInfo.avatarUrl}}" alt="ball">
+    <div class="space-y-2 w-1/2 text-left">
+      <p class="text-black  font-tilt text-2xl">{{userInfo.name}}</p>
+      <p class="text-xs font-tilt leading-none  text-gray-600 flex ">
+        <svg class="mr-1" xmlns="http://www.w3.org/2000/svg" width="14" height="18" viewBox="0 0 24 24" fill="none"
+          stroke="#626262" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="round">
+          <circle cx="12" cy="10" r="3" />
+          <path d="M12 21.7C17.3 17 20 13 20 10a8 8 0 1 0-16 0c0 3 2.7 6.9 8 11.7z" />
+        </svg>
+        <small class="text-xs mt-1">
+          {{userInfo?.state}}, {{userInfo?.country}}
+        </small>
+      </p>
+      <p class="text-gray-500 text-left font-tilt "> {{userInfo.summary}}
     </div>
+    <div class="mt-1">
+      <button type="button"
+        class="inline-block ml-2 rounded-full border-4 border-blue-300 px-2 pt-2 pb-[6px] bg-blue-300 transition duration-150 ease-in-out text-center hover:border-primary-accent-100 hover:bg-blue-400 hover:border-blue-400  ">
+        <small class="font-tilt text-base text-slate-100">Edit Profile</small></button>
+      <button type="button"
+        class="inline-block ml-2 rounded-full border-4 px-2 pt-2 pb-[6px]  transition duration-150 ease-in-out hover:border-primary-accent-100 hover:bg-neutral-500 hover:bg-opacity-10 ">
+        <small class="font-tilt text-base text-gray-600">Public View</small></button>
+    </div>
+
   </div>
   <div class="items-center flex">
     <div class="bg-gray-100 h-10 w-72">
@@ -86,6 +79,6 @@
 
       </p>
     </div>
-   
+
   </div>
 </div>

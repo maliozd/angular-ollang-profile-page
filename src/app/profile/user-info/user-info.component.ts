@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Profile } from 'src/app/contracts/api/profile';
-import UserInfoDTO from 'src/app/contracts/dtos/user-info-dto';
+import { UserInfoData } from 'src/app/contracts/dtos/user-info-data';
 import { UserProfileService } from 'src/app/services/user-profile.service';
 
 @Component({
@@ -13,11 +13,10 @@ export class UserInfoComponent implements OnInit {
   constructor() { }
 
 
-  @Input() userInfo : UserInfoDTO;
+  @Input() userInfo : UserInfoData;
 
 
   async ngOnInit() {
-    console.log(this.userInfo)
   }
 
 }

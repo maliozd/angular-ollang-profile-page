@@ -8,15 +8,12 @@ import { UserProfileService } from './services/user-profile.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  constructor(private userProfileService: UserProfileService) {
+  constructor() {
 
   }
   title = 'ollang-profile-page-task';
 
-  profileData : Profile;
   async ngOnInit() {
-    this.profileData = await this.userProfileService.getProfileDataById(21);
-    console.log(this.profileData)
   }
 
  
